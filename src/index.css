@@ -90,10 +90,11 @@ table td:first-child {
   width: 10%;
 }
 
-/* .off td {
+/* 체크박스가 표시되었을 때 회색 처리 */
+.off td {
   background: #eee;
   color: #ccc;
-} */
+}
 
 .btn_del {
   margin-left: 10px;
@@ -112,7 +113,7 @@ button {
   background-color: dodgerblue;
 }
 
-/* .input_area {
+.input_area {
   margin-bottom: 10px;
 }
 
@@ -132,4 +133,4 @@ button {
   width: 400px;
   height: 40px;
   font-size: 20px;
-} */
+}

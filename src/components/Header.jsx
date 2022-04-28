@@ -8,12 +8,12 @@ function Header() {
       </h1>
       <ul className='menu'>
         <li>
-          <Link to='#' className='link'>
+          <Link to='/create_word' className='link'>
             단어 추가
           </Link>
         </li>
         <li>
-          <Link to='#' className='link'>
+          <Link to='/create_day' className='link'>
             날짜 추가
           </Link>
         </li>
