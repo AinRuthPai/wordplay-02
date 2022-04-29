@@ -16,6 +16,7 @@ function Word({ word }) {
 
   function toggleDone() {
     // isShow를 반대값으로
+    console.log(word.id);
     fetch(`http://localhost:3001/words/${word.id}`, {
       method: "PUT",
       headers: {
@@ -33,14 +34,16 @@ function Word({ word }) {
   }
 
   function del() {
-    fetch(`http://localhost:3001/words/${word.id}`, {
-      method: "DELETE",
-    }).then((res) => {
-      if (res.ok) {
-        alert("삭제가 완료되었습니다!");
-        word.id = 0;
-      }
-    });
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      fetch(`http://localhost:3001/words/${word.id}`, {
+        method: "DELETE",
+      }).then((res) => {
+        if (res.ok) {
+          alert("삭제가 완료되었습니다!");
+          word.id = 0;
+        }
+      });
+    }
   }
   if (word.id === 0) {
     return null;
