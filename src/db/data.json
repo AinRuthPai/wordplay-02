@@ -63,13 +63,6 @@
       "kor": "시계",
       "isDone": false,
       "id": 13
-    },
-    {
-      "day": 1,
-      "eng": "pen",
-      "kor": "펜",
-      "isDone": true,
-      "id": 14
     }
   ]
 }
