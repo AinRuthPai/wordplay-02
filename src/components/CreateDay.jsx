@@ -1,16 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
-function CreateDay({ data }) {
+function CreateDay() {
+  const days = useFetch(`http://localhost:3001/days`);
   const navigate = useNavigate();
 
   function addDay() {
-    fetch(`http://localhost:3001/days/`, {
+    fetch(`http://localhost:3001/days`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
       body: JSON.stringify({
-        day: data.days.length + 1,
+        day: days.length + 1,
       }),
     }).then((res) => {
       if (res.ok) {
@@ -21,7 +23,7 @@ function CreateDay({ data }) {
   }
   return (
     <>
-      <h3>현재 일수 : {data.days.length}</h3>
+      <h3>현재 일수 : {days.length}</h3>
       <button onClick={addDay}>날짜 추가하기</button>
     </>
   );

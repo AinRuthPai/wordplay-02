@@ -4,7 +4,8 @@
 
 import { useState } from "react";
 
-function Word({ word }) {
+function Word({ word: w }) {
+  const [word, setWord] = useState(w);
   const [isShow, setIsShow] = useState(false);
   const [isDone, setIsDone] = useState(word.isDone);
 
@@ -16,12 +17,12 @@ function Word({ word }) {
 
   function toggleDone() {
     // isShow를 반대값으로
-    console.log(word.id);
     fetch(`http://localhost:3001/words/${word.id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
+      // JSON.stringify() 메소드는 JavaScript 값이나 객체를 JSON 문자열로 변환
       body: JSON.stringify({
         ...word,
         isDone: !isDone,
@@ -38,9 +39,10 @@ function Word({ word }) {
       fetch(`http://localhost:3001/words/${word.id}`, {
         method: "DELETE",
       }).then((res) => {
+        // DELETE만 사용해도 삭제되지만 후에 바로 재렌더링을 위해서 id를 0으로 바꾸고 null을 return한다
         if (res.ok) {
           alert("삭제가 완료되었습니다!");
-          word.id = 0;
+          setWord({ id: 0 });
         }
       });
     }

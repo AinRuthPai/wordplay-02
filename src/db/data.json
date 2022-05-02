@@ -19,6 +19,14 @@
     {
       "day": 5,
       "id": 5
+    },
+    {
+      "day": 6,
+      "id": 6
+    },
+    {
+      "day": 7,
+      "id": 7
     }
   ],
   "words": [
@@ -59,10 +67,24 @@
     },
     {
       "day": 1,
-      "eng": "clock",
-      "kor": "시계",
+      "eng": "apple",
+      "kor": "사과",
       "isDone": false,
       "id": 13
+    },
+    {
+      "day": 2,
+      "eng": "house",
+      "kor": "집",
+      "isDone": false,
+      "id": 14
+    },
+    {
+      "day": 3,
+      "eng": "dasfasdf",
+      "kor": "adsfdgfdsgsfd",
+      "isDone": false,
+      "id": 18
     }
   ]
 }
