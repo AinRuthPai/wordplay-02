@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import { IDay } from "./Day";
 
 function DayList() {
-  const days = useFetch(`http://localhost:3001/days`);
+  const days: IDay[] = useFetch(`http://localhost:3001/days`);
   // const [days, setDays] = useState([]);
 
   // 첫 번째 인자로 무조건 함수를 받는다.

@@ -4,7 +4,19 @@
 
 import { useState } from "react";
 
-function Word({ word: w }) {
+interface IProps {
+  word: IWord;
+}
+
+export interface IWord {
+  id: number;
+  day: number;
+  eng: string;
+  kor: string;
+  isDone: boolean;
+}
+
+function Word({ word: w }: IProps) {
   const [word, setWord] = useState(w);
   const [isShow, setIsShow] = useState(false);
   const [isDone, setIsDone] = useState(word.isDone);
@@ -42,7 +54,10 @@ function Word({ word: w }) {
         // DELETE만 사용해도 삭제되지만 후에 바로 재렌더링을 위해서 id를 0으로 바꾸고 null을 return한다
         if (res.ok) {
           alert("삭제가 완료되었습니다!");
-          setWord({ id: 0 });
+          setWord({
+            ...word,
+            id: 0,
+          });
         }
       });
     }
