@@ -68,7 +68,7 @@ function Word({ word: w }: IProps) {
 
   return (
     // props로 key값을 받아오므로 여기서 key값을 작성하지 않아도 된다.
-    <tr className={isDone ? "off" : null}>
+    <tr className={isDone ? "off" : ""}>
       <td>
         <input type='checkbox' checked={isDone} onChange={toggleDone} />
       </td>
