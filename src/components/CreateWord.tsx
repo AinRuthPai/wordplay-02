@@ -12,6 +12,8 @@ function CreateWord() {
     event.preventDefault();
 
     if (!isLoading && dayRef.current && engRef.current && korRef.current) {
+      // 문자형으로 받아져서 정상적으로 출력되지 않아 숫자형으로 변경
+      // current : 해당 요소에 접근
       const day = Number(dayRef.current.value);
       const eng = engRef.current.value;
       const kor = korRef.current.value;
@@ -23,8 +25,6 @@ function CreateWord() {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          // 문자형으로 받아져서 정상적으로 출력되지 않아 숫자형으로 변경
-          // current : 해당 요소에 접근
           day,
           eng,
           kor,
